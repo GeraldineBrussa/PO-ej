@@ -42,5 +42,7 @@ public class Main {
 
         /*Ex5 */
         practice.rockPaperScissorsLizardSpock();
+        practice.firstPrimeNumber();
+        practice.payroll();
     }
 }

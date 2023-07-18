@@ -1,7 +1,8 @@
 package org.POO.example.CTD.modulo.uno;
 
-import java.util.Random;
-import java.util.Scanner;
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.*;
 
 //Ex1: https://docs.google.com/document/d/1SYnHLbzc9q89QADGa8SMI1UJBzbLESMhYizwmS_Z0CE/edit?usp=sharing
 //Ex2: https://docs.google.com/document/d/1FPrQy3Xj0LqhdM8wvXS8iQIkTmksjAlKrdTpXmIxu28/edit?usp=sharing
@@ -143,28 +144,64 @@ public class Practice {
 
     private int whoWins(Integer playerOption, Integer programOption) {
         if (playerOption.equals(programOption)) {
-            return 0; // Empate
+            return 0;
         }  else if ((playerOption.equals(0) && (programOption.equals(2) || programOption.equals(3)))
                 || (playerOption.equals(1) && (programOption.equals(0) || programOption.equals(3))))
-        {            return 1; // Gana el jugador 1
-    } else if ((playerOption.equals(2) && (programOption.equals(1) || programOption.equals(3)))
+        {            return 1;
+        } else if ((playerOption.equals(2) && (programOption.equals(1) || programOption.equals(3)))
             || (playerOption.equals(3) && (programOption.equals(1) || programOption.equals(4)))) {
-        return 1; // Gana el jugador 1
-    } else if ((playerOption.equals(3) && (programOption.equals(4) || programOption.equals(0)))
+            return 1;
+        } else if ((playerOption.equals(3) && (programOption.equals(4) || programOption.equals(0)))
             || (playerOption.equals(4) && (programOption.equals(2) || programOption.equals(0))))
-        {        return 1; // Gana el jugador 1
-} else if ((programOption.equals(0) && (playerOption.equals(2) || playerOption.equals(3)))
-        || (programOption.equals(1) && (playerOption.equals(0) || playerOption.equals(3))))
-        {return 2; // Gana el jugador 2
+        {        return 1;
+        } else if ((programOption.equals(0) && (playerOption.equals(2) || playerOption.equals(3)))
+            || (programOption.equals(1) && (playerOption.equals(0) || playerOption.equals(3))))
+            {return 2;
         } else if ((programOption.equals(2) && (playerOption.equals(1) || playerOption.equals(3)))
-        || (programOption.equals(3) && (playerOption.equals(1) || playerOption.equals(4)))) {
-        return 2; // Gana el jugador 2
+            || (programOption.equals(3) && (playerOption.equals(1) || playerOption.equals(4)))) {
+            return 2;
         } else if ((programOption.equals(3) && (playerOption.equals(4) || playerOption.equals(0)))
-        || (programOption.equals(4) && (playerOption.equals(2) || playerOption.equals(0))))
-        {return 2; // Gana el jugador 2
+            || (programOption.equals(4) && (playerOption.equals(2) || playerOption.equals(0))))
+            {return 2;
         } else {
-        return -1; // Opción inválida
+            return -1;
         }
     }
+
+    public void firstPrimeNumber(){
+        System.out.println("Enter a number:");
+        int n = scanner.nextInt();
+        List<Integer>primeNumber = new ArrayList<>();
+        for (int number = 2; primeNumber.size() < n; number ++){
+                if (isPrime(number)){
+                    primeNumber.add(number);
+                }
+        }
+        System.out.println("The first " + n + " prime numbers are: " + primeNumber.toString());
     }
+    private boolean isPrime(int num) {
+        if (num<=1){
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public void payroll(){
+        System.out.println("Enter the amount of hours worked:");
+        int hoursWorked = scanner.nextInt();
+        double hourValue = 875.0;
+        double overtimeValue= hourValue * 1.5;
+        int overtime = hoursWorked - 40;
+        double salary = hoursWorked <=40 ? hoursWorked * hourValue :
+                (40 * hourValue) + (overtime * overtimeValue);
+        System.out.println("The weekly salary based on hours worked is:" + salary);
+    }
+
+    }
+
+
 
