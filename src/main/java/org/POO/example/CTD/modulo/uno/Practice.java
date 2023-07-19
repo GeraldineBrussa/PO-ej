@@ -1,6 +1,6 @@
 package org.POO.example.CTD.modulo.uno;
 
-import org.w3c.dom.ls.LSOutput;
+
 
 import java.util.*;
 
@@ -177,7 +177,7 @@ public class Practice {
                     primeNumber.add(number);
                 }
         }
-        System.out.println("The first " + n + " prime numbers are: " + primeNumber.toString());
+        System.out.println("The first " + n + " prime numbers are: " + primeNumber);
     }
     private boolean isPrime(int num) {
         if (num<=1){
@@ -196,8 +196,7 @@ public class Practice {
         double hourValue = 875.0;
         double overtimeValue= hourValue * 1.5;
         int overtime = hoursWorked - 40;
-        double salary = hoursWorked <=40 ? hoursWorked * hourValue :
-                (40 * hourValue) + (overtime * overtimeValue);
+        double salary = hoursWorked <=40 ? hoursWorked * hourValue : (40 * hourValue) + (overtime * overtimeValue);
         System.out.println("The weekly salary based on hours worked is:" + salary);
     }
 
